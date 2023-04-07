@@ -7,7 +7,7 @@ function countEvenOdd(arr) {
   let otherCount = 0;
   
   for (let i=0; i < arr.length; i++) {
-    if (arr[i] !==0 && typeof(arr[i]) !== 'number') {
+    if (arr[i] !==0 && typeof(arr[i]) !== 'number' || isNaN(arr[i])) {
       otherCount++;
     } else if (arr[i] === 0) {
       zeroCount++;
@@ -23,12 +23,12 @@ function countEvenOdd(arr) {
   console.log(`Other elements: ${otherCount}`);
 }
 
-let arr1 = [0, null, undefined, 1, 2, 3, 4, 5, 6, "s", "k"];
+let arr1 = [0, null, undefined, 1, 2, 3, 4, 5, 6, "s", "k", NaN];
 countEvenOdd(arr1);
 
 // Option №2
 
-let arr2 = [0, null, undefined, 1, 2, 3, 4, 5, 6, "s", "k"];
+let arr2 = [0, null, undefined, 1, 2, 3, 4, 5, 6, "s", "k", NaN];
 
 function countEvenOdd(arr) {
   let evenCount = 0;
@@ -37,7 +37,7 @@ function countEvenOdd(arr) {
   let otherCount = 0;
   
   for (let i=0; i < arr.length; i++) {
-    if (arr[i] !==0 && typeof(arr[i]) !== 'number') {
+    if (arr[i] !==0 && typeof(arr[i]) !== 'number' || isNaN(arr[i])) {
       otherCount++;
     } else if (arr[i] === 0) {
       zeroCount++;
